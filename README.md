@@ -27,3 +27,89 @@ sh run.sh
 Open your web browser and visit to access your application.
 
 Technical Task [http://localhost.8082](http://localhost.8082/) <br/>
+
+# 7. Endpoints list:
+
+### For User
+
+#### Register <br/>
+API - localhost:8082/api/v1/auth/register <br/> 
+Method - POST
+<br/><br/>
+Body - { <br/>
+"email":"harut.hakobyan2013@gmail.com", <br/>
+"name": "Harut", <br/>
+"password" : "Asdasd123!", <br/>
+"password_confirmation" : "Asdasd123!" <br/>
+}
+
+#### Login <br/>
+
+API - localhost:8082/api/v1/auth/login <br/>
+Method - POST
+<br/><br/>
+Body - { <br/>
+"email":"harut.hakobyan2013@gmail.com", <br/>
+"password" : "Asdasd123!", <br/>
+}
+
+### For Report
+
+#### Get Reports <br/>
+
+API - localhost:8082/api/v1/report <br/>
+Method - GET
+
+Header - {Bearer token is required} <br/>
+
+### For Websites
+
+#### Get Websites ( With pagination ) <br/>
+
+API - localhost:8082/api/v1/websites <br/> 
+Method - GET
+
+Header - {Bearer token is required} <br/>
+
+#### Get Website Report ( With specific ID ) <br/>
+
+API - localhost:8082/api/v1/websites/{id}/report <br/>
+Method - GET
+
+Header - {Bearer token is required} <br/>
+
+#### Create Website <br/>
+
+API - localhost:8082/api/v1/websites <br/>
+Method - POST <br/>
+
+Body - { <br/>
+"url":"https://www.google.com" <br/>
+}
+
+Header - {Bearer token is required} <br/>
+
+#### Update Website <br/>
+
+API - localhost:8082/api/v1/websites/{id} <br/>
+Method - PUT
+
+Body - { <br/>
+"url":"https://www.google.com" <br/>
+}
+
+Header - {Bearer token is required} <br/>
+
+#### Delete Website <br/>
+
+API - localhost:8082/api/v1/websites/{id} <br/>
+Method - DELETE
+
+Header - {Bearer token is required} <br/>
+
+#### Show Website <br/>
+
+API - localhost:8082/api/v1/websites/{id} <br/>
+Method - GET
+
+Header - {Bearer token is required} <br/>
