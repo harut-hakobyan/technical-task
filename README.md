@@ -22,6 +22,18 @@ Execute the following command to start the Docker containers and set up the Lara
 sh run.sh
 ```
 
+## 5. Generate Key:
+
+Execute the following commands to generate Application <br/> Key
+In the docker folder execute command
+```bash
+docker exec -it task_server bash
+```
+After that generate a key
+```bash
+php artisan key:generate
+```
+
 # 6. Access the App:
 
 Open your web browser and visit to access your application.
