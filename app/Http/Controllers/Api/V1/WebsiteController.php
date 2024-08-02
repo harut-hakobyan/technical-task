@@ -27,7 +27,7 @@ class WebsiteController extends Controller {
 
         Website::query()->create($request->all());
 
-        return response()->json(['result' => true]);
+        return response()->json(['result' => true], 201);
     }
 
     public function update(Request $request, Website $website): JsonResponse {
@@ -49,8 +49,8 @@ class WebsiteController extends Controller {
     public function getWebsiteReport(string $id): JsonResponse {
         if (Website::query()->find($id)) {
             $dailyReports = Report::query()->selectRaw('
-                date, sum(revenue) as total_revenue, 
-                sum(impressions) as total_impressions, 
+                date, sum(revenue) as total_revenue,
+                sum(impressions) as total_impressions,
                 sum(clicks) as total_clicks'
             )
                 ->where('website_id', $id)
@@ -70,8 +70,8 @@ class WebsiteController extends Controller {
                 });
 
             $totals = Report::query()->selectRaw('
-                sum(revenue) as total_revenue, 
-                sum(impressions) as total_impressions, 
+                sum(revenue) as total_revenue,
+                sum(impressions) as total_impressions,
                 sum(clicks) as total_clicks'
             )
                 ->where('website_id', $id)
